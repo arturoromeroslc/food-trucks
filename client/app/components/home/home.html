@@ -1,9 +1,9 @@
 <navbar></navbar>
-<header>
-  <hero></hero>
-</header>
+<div ng-if="!$ctrl.user">
+	<button class="button button-outlined" ng-click="$ctrl.login()">
+  		Login 
+	</button>
+</div>
 <main>
-  <div>
-    <h1>Found in {{ $ctrl.name }}.html</h1>
-  </div>
+	This is where the list goes
 </main>

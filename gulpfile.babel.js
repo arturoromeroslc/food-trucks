@@ -95,7 +95,16 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('watch', ['serve']);
+gulp.task('copy_modules', () => {
+  gulp.src([
+    './node_modules/firebase/firebase.js',
+    './node_modules/angular/angular.js',
+    './node_modules/angularfire/dist/angularfire.js'
+  ])
+  .pipe(gulp.dest('./client/app/lib/'));
+});
+
+gulp.task('watch', ['copy_modules', 'serve']);
 
 gulp.task('component', () => {
   const cap = (val) => {

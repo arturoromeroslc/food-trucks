@@ -1,0 +1,78 @@
+
+
+// 	function InstagramService($http) { 
+// 		// var instagramUsersCalled = {};
+// 		// var instagramUsersArray = [];
+
+// 		this.getInstagramUser = function(userId) { 
+// 			if (instagramUsersCalled.userId === true) {
+// 				return
+// 			} else {
+// 			return $http.jsonp('https://api.instagram.com/v1/users/' + userId + '?client_id=f1537afabc07455c820f6a2566076008&callback=JSON_CALLBACK')
+// 				.then(function instagramUserDataCallback(res) {
+// 					var instagramUserData = res.data.data;
+// 					instagramUsersCalled.userId = true;
+// 					instagramUsersArray.push(instagramUserData);
+// 				});
+// 			}	
+// 		}
+
+// 		this.getInstagramUsersArray = function() {
+// 			return instagramUsersArray;
+// 		}
+		
+// 		this.getInstagramFeed = function(userId) {
+// 			return $http.jsonp('https://api.instagram.com/v1/users/' + userId + '/media/recent?count=40&client_id=f1537afabc07455c820f6a2566076008&callback=JSON_CALLBACK')
+// 				.then(function dataReturned(res) {
+// 					var feedData = res.data.data;
+// 						var i, image, max = 33, arrayOfImages = [];
+// 						for (i = 0; i < max; i += 1) { 
+//       				image = { image: feedData[i].images.thumbnail.url };
+// 				      	arrayOfImages.push(image);
+// 				      }				    
+// 					return arrayOfImages;
+// 				});
+// 		}
+// 	})
+// })();
+
+// import _ from 'lodash';
+
+const InstagramFactory = ($http) => {
+    let instagramUsersCalled = {};
+    let instagramUsersArray = [];
+
+    const getInstagramUser = (userId) => {
+    	console.log('hello from service');
+    };
+
+    const getInstagramUsersArray = (query) => {
+		return 'instagramUsersArray'
+    };
+
+    const getInstagramFeed = (userId) => {
+
+    };
+
+    return { getInstagramUser, getInstagramUsersArray, getInstagramFeed };
+};
+
+InstagramFactory.$inject = ['$http'];
+
+export default InstagramFactory;
+
+// let UserFactory = function () {
+//   const user = {};
+
+//   let getUser = () => {
+//     return user;
+//   };
+
+//   let isSignedIn = () => {
+//     return user.isSignedIn; 
+//   };
+
+//   return { getUser, isSignedIn };
+// };
+
+// export default UserFactory;

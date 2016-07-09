@@ -1,8 +1,16 @@
-<nav class="navbar">
-  <div class="logo">
-    <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
-  </div>
-  <div class="nav-links">
-    <span><a ui-sref="about">about</a></span>
-  </div>
+<nav class='top-nav top-nav-dark cf' role='navigation'>
+	<input id='menu-toggle' class='menu-toggle' type='checkbox'>
+	<label for='menu-toggle'>Menu</label>
+	<ul class='list-unstyled list-inline cf'>
+		<li><a ui-sref="home">{{ $ctrl.name }}</a></li>
+	  <li><a ui-sref="about">about</a></li>
+	  <li class='has-dropdown'>
+	    <a class='active'>Link Four</a>
+	    <div class='icon-arrow-down'></div>
+	    <ul class='list-unstyled dropdown cf'>
+	      <li><a>Sublink One</a></li>
+	      <li><a>Sublink Two</a></li>
+	    </ul>
+	  </li>
+	</ul>
 </nav>
