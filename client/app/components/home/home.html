@@ -1,9 +1,32 @@
 <navbar></navbar>
-<div ng-if="!$ctrl.user">
-	<button class="button button-outlined" ng-click="$ctrl.login()">
-  		Login 
-	</button>
+<h2>Search for a food truck</h2>
+
+<input class="form-input" placeholder='search github users' ng-model="val" ng-change="update(val)" />
+<ul class="suggestions">
+	<li ng-repeat="suggestion in suggestions">
+	  <a href="https://github.com/{{suggestion}}" target="_blank">{{suggestion}}</a>
+	</li>
+</ul>
+
+<form class='form-inline'>
+	<div class='form-element'>
+		<input type='text' id='search' placeholder='food truck or location' class='form-input'>
+	</div>
+</form>
+
+<div class="home__slider-navigation">
+	<ul class="home__slider-list">
+		<li ng-repeat="category in $ctrl.foodCategories" class="home__slider-text">{{category}}</li>
+	</ul>
 </div>
-<main>
-	This is where the list goes
-</main>
+
+<div class="home__card-container" ng-repeat="truckData in $ctrl.data" ui-sref="truck({truckId: truckData.id})">
+	<div class="">
+	  <img src='http://placehold.it/200x200?text=100x100' class='avatar avatar-large avatar-radius' />
+	</div>
+	<div class="home__card-description">
+		<h4>{{truckData.name}}</h4>
+		<span>{{truckData.type}}</span>
+		<span>{{truckData.price}}</span>
+	</div>
+</div>

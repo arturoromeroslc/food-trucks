@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import uiGmapgoogleMaps from 'angular-google-maps';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
@@ -7,12 +8,15 @@ import firebase from 'firebase';
 import { initializeFirebaseApp, ApplicationConfig } from './config';
 import 'normalize.css';
 
+console.log(uiGmapgoogleMaps);
+
 const config = initializeFirebaseApp();
 
 angular.module('app', [
     uiRouter,
     Common,
     Components,
+    // uiGmapgoogleMaps,
     'firebase'
   ])
   .constant('firebase', firebase)

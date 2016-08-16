@@ -4,13 +4,13 @@
 	<ul class='list-unstyled list-inline cf'>
 		<li><a ui-sref="home">{{ $ctrl.name }}</a></li>
 	  <li><a ui-sref="about">about</a></li>
-	  <li class='has-dropdown'>
-	    <a class='active'>Link Four</a>
-	    <div class='icon-arrow-down'></div>
-	    <ul class='list-unstyled dropdown cf'>
-	      <li><a>Sublink One</a></li>
-	      <li><a>Sublink Two</a></li>
-	    </ul>
-	  </li>
+	 
+	<li>
+		<div ng-if="!$ctrl.user">
+			<button class="button button-outlined" ng-click="$ctrl.login()">
+			Login 
+			</button>
+		</div>
+	</li>
 	</ul>
 </nav>
